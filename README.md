@@ -10,64 +10,57 @@ ZOZOTOWN DB設計
 |postal_code|integer|null: false|
 |address|string|null:false|
 |phone_number|integer|null:false|
-|card_infomation|integer|nell:false|
+|card_infomation|integer|null:false|
 
 ### Asociation
-has_many : transactions
-has_many : comments
+has_one : cart
 
 
 
-## transactionsテーブル
+## cartsテーブル
 |Column|Type|Opitions|
 |------|----|--------|
-|id|integer|null: false|
-|item_id|integer|null:false|
-|fee_type|string|nuull:false|
-|transfortation_type|string|null:false|
-|area|string|null:false|
-|days|integer|null:false|
-|status|integer|null:false|
+|user-id|integer|null: false|
+|product_id|integer|null:false|
+|number|integer|null:false|
+|price_sum|integer|null:false|
+|fee_type|string|null:false|
 
 ### asociation
-has_one : items
-belongs_to : users
+has_one : user
+has_many : products
 
 
-## コメント
-statusカラムはenumを使う
-
-
-## itemsテーブル
+## productsテーブル
 |Column|Type|Opitions|
 |------|----|--------|
-|user_id|integer|
-|name|sritng|null: false unique: true|
+|id|integer|null:false|
+|name|sritng|null: false|
 |body|text|
 |price|integer|null:false|
+|coler|string|null:false|
+|size|string|null:false|
+|brand|string|
 
 ### asociation
-belongs_to : users
-belongs_to : transactions
-has_many : comments
-has_many : items_image
+belongs_to : cart
+belongs_to : shop
+has_many : images
 
-## items_imageテーブル
+## imagesテーブル
 |Column|Type|Opitions|
 |------|----|--------|
 |image|string|null:false|
-|item_id|integer|null:false|
+|product_id|integer|null:false|
 
 ### asociation
-belongs_to : items
+belongs_to : product
 
-## commentsテーブル
+## shopsテーブル
 |Column|Type|Opitions|
 |------|----|--------|
-|user_id|integer|null: false|
-|item_id|integer|null: false|
-|body|text|
+|id|integer|null: false|
+|shopname|string|null:false|
 
 ### association
-belongs_to : items
-belongs_to : users
+has_many : products
