@@ -1,6 +1,6 @@
 lock "3.9.1"
 
-set :application, ‘ZOZOTOWN’
+set :application, 'ZOZOTOWN'
 set :repo_url,  'git@github.com:hideotty/ZOZOTOWN.git'
 
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
