@@ -1,24 +1,73 @@
-# README
+ZOZOTOWN DB設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## usersテーブル
+|Column|Type|Opitions|
+|------|----|--------|
+|id|integer|null: false|
+|nickname|string|null: false|
+|email|string|null: false,unique: true|
+|name|string|null: false unique: true|
+|postal_code|integer|null: false|
+|address|string|null:false|
+|phone_number|integer|null:false|
+|card_infomation|integer|nell:false|
 
-Things you may want to cover:
+### Asociation
+has_many : transactions
+has_many : comments
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
+## transactionsテーブル
+|Column|Type|Opitions|
+|------|----|--------|
+|id|integer|null: false|
+|item_id|integer|null:false|
+|fee_type|string|nuull:false|
+|transfortation_type|string|null:false|
+|area|string|null:false|
+|days|integer|null:false|
+|status|integer|null:false|
 
-* Database creation
+### asociation
+has_one : items
+belongs_to : users
 
-* Database initialization
 
-* How to run the test suite
+## コメント
+statusカラムはenumを使う
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## itemsテーブル
+|Column|Type|Opitions|
+|------|----|--------|
+|user_id|integer|
+|name|sritng|null: false unique: true|
+|body|text|
+|price|integer|null:false|
 
-* ...
+### asociation
+belongs_to : users
+belongs_to : transactions
+has_many : comments
+has_many : items_image
+
+## items_imageテーブル
+|Column|Type|Opitions|
+|------|----|--------|
+|image|string|null:false|
+|item_id|integer|null:false|
+
+### asociation
+belongs_to : items
+
+## commentsテーブル
+|Column|Type|Opitions|
+|------|----|--------|
+|user_id|integer|null: false|
+|item_id|integer|null: false|
+|body|text|
+
+### association
+belongs_to : items
+belongs_to : users
