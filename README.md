@@ -15,11 +15,10 @@ ZOZOTOWN DB設計
 ### Asociation
 has_one : cart
 
-
-
 ## cartsテーブル
 |Column|Type|Opitions|
 |------|----|--------|
+|id|integer|null: false|
 |user-id|integer|null: false|
 |product_id|integer|null:false|
 |number|integer|null:false|
@@ -29,7 +28,18 @@ has_one : cart
 ### asociation
 has_one : user
 has_many : products
+has_one : payment
 
+## paymentsテーブル
+|Column|Type|Opitions|
+|------|----|--------|
+|id|integer|null: false|
+|user-id|integer|null: false|
+|amount|integer|null:false|
+|status|string|null:false|
+
+### asociation
+has_one : payment
 
 ## productsテーブル
 |Column|Type|Opitions|
