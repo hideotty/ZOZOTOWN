@@ -1,0 +1,84 @@
+!!!
+%body
+  %h1.shop_name #{@shop.name}
+  .shop_contents
+    .sale_product
+      %h5.contents_product-title 最近追加された商品
+      %hr.contents_product-line
+        .contents_sale_product
+          - @recentproducts.each do |product|
+            .contents_product__grid
+              = link_to product_path(product.id) do
+                = image_tag "#{product.images.main_image[0].image.url}" if product.images.main_image.present?
+                = image_tag "no-image.jpg" if not product.images.main_image.present?
+              %p.contents_price
+                ¥ #{product.price.to_s(:delimited)}
+          / .contents_product__grid
+          /   = image_tag "image10.jpg"
+          /   %p.contents_price ¥30,000
+          / .contents_product__grid
+          /   = image_tag "image11.jpg"
+          /   %p.contents_price ¥30,000
+          / .contents_product__grid
+          /   = image_tag "image12.jpg"
+          /   %p.contents_price ¥30,000
+          / .contents_product__grid
+          /   = image_tag "image13.jpg"
+          /   %p.contents_price ¥30,000
+          / .contents_product__grid
+          /   = image_tag "image15.jpg"
+          /   %p.contents_price ¥30,000
+
+
+      %h5.contents_product-title 出品中の全商品
+      %hr.contents_product-line
+      .contents_sale_product
+        - @products.each do |product|
+          .contents_product__grid
+            = link_to product_path(product.id) do
+              = image_tag "#{product.images.main_image[0].image.url}" if product.images.main_image.present?
+              = image_tag "no-image.jpg" if not product.images.main_image.present?
+            %p.contents_price
+              ¥ #{product.price.to_s(:delimited)}
+        / .contents_product__grid
+        /   = image_tag "image02.jpg"
+        /   %p.contents_price ¥30,000
+        / .contents_product__grid
+        /   = image_tag "image03.jpg"
+        /   %p.contents_price ¥30,000
+        / .contents_product__grid
+        /   = image_tag "image04.jpg"
+        /   %p.contents_price ¥30,000
+        / .contents_product__grid
+        /   = image_tag "image05.jpg"
+        /   %p.contents_price ¥30,000
+        / .contents_product__grid
+        /   = image_tag "image06.jpg"
+        /   %p.contents_price ¥30,000
+        / .contents_product__grid
+        /   = image_tag "image07.jpg"
+        /   %p.contents_price ¥30,000
+        / .contents_product__grid
+        /   = image_tag "image08.jpg"
+        /   %p.contents_price ¥30,000
+        / .contents_product__grid
+        /   = image_tag "image09.jpg"
+        /   %p.contents_price ¥30,000
+        / .contents_product__grid
+        /   = image_tag "image10.jpg"
+        /   %p.contents_price ¥30,000
+        / .contents_product__grid
+        /   = image_tag "image11.jpg"
+        /   %p.contents_price ¥30,000
+        / .contents_product__grid
+        /   = image_tag "image12.jpg"
+        /   %p.contents_price ¥30,000
+        / .contents_product__grid
+        /   = image_tag "image13.jpg"
+        /   %p.contents_price ¥30,000
+        / .contents_product__grid
+        /   = image_tag "image14.jpg"
+        /   %p.contents_price ¥30,000
+
+
+  .footer
