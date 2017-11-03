@@ -1,6 +1,7 @@
 require "capistrano/setup"
 require "capistrano/deploy"
 require "capistrano/scm/git"
+install_plugin capistrano::SCM::Git
 
 require 'capistrano/rbenv'
 require 'capistrano/bundler'
