@@ -12,5 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+<<<<<<< Updated upstream
 //= require turbolinks
+=======
+>>>>>>> Stashed changes
 //= require_tree .

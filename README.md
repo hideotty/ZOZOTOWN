@@ -4,31 +4,28 @@ ZOZOTOWN DB設計
 |Column|Type|Opitions|
 |------|----|--------|
 |id|integer|null: false|
-|nickname|string|null: false|
 |email|string|null: false,unique: true|
-|name|string|null: false unique: true|
+|name|string|null: false|
+|kana_name|string|null: false|
 |postal_code|integer|null: false|
 |address|string|null:false|
-|phone_number|integer|null:false|
-|card_infomation|integer|null:false|
+|phone_number|integer|null: false|
 
 ### Asociation
-has_one : cart
+has_many : carts
 
 ## cartsテーブル
 |Column|Type|Opitions|
 |------|----|--------|
 |id|integer|null: false|
-|user-id|integer|null: false|
+|user_id|integer|null: false|
 |product_id|integer|null:false|
-|number|integer|null:false|
-|price_sum|integer|null:false|
-|fee_type|string|null:false|
+|status|string|null: false|
 
 ### asociation
-has_one : user
-has_many : products
-has_one : payment
+belongs_to :product
+belongs_to :user
+has_one :payment
 
 ## paymentsテーブル
 |Column|Type|Opitions|
@@ -36,24 +33,26 @@ has_one : payment
 |id|integer|null: false|
 |user-id|integer|null: false|
 |amount|integer|null:false|
-|status|string|null:false|
+|status|integer|null:false|
 
 ### asociation
-has_one : payment
+has_one : cart
 
 ## productsテーブル
 |Column|Type|Opitions|
 |------|----|--------|
 |id|integer|null:false|
 |name|sritng|null: false|
+|cloth_group|string|null: false|
+|cloth_category|string|null: false|
+|cloth_type|string|null: false|
 |body|text|
 |price|integer|null:false|
 |coler|string|null:false|
 |size|string|null:false|
-|brand|string|
 
 ### asociation
-belongs_to : cart
+has_many : carts
 belongs_to : shop
 has_many : images
 
@@ -62,6 +61,7 @@ has_many : images
 |------|----|--------|
 |image|string|null:false|
 |product_id|integer|null:false|
+|status|integer|null:false|
 
 ### asociation
 belongs_to : product
@@ -70,7 +70,9 @@ belongs_to : product
 |Column|Type|Opitions|
 |------|----|--------|
 |id|integer|null: false|
-|shopname|string|null:false|
+|name|string|null:false|
+|representative|string|null:false|
+|email|string|null: false|
 
 ### association
 has_many : products
