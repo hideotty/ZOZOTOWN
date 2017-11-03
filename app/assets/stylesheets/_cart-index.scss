@@ -1,0 +1,140 @@
+.cart_body {
+  display: flex;
+  flex-direction: row;
+  padding: 40px;
+}
+
+.order-detail__contents {
+  width: 550px;
+  height: calc(100vh-50px);
+}
+
+.order-detail__main_contents-wrapper {
+  width: 550px;
+  min-height: 1000px;
+  display: flex;
+  flex-direction: column;
+}
+
+.order-detail__main_contents-empty {
+  width: 550px;
+}
+
+.order-detail__main_contents {
+  width: 550px;
+  height: 200px;
+  border-style: solid;
+  border-color: #ccc;
+  border-width: 0 0 1px 0;
+}
+
+.order-detail__main_contents__grid {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.order-detail__main_contents_image
+  img {
+    width: 150px;
+    height: 160px;
+}
+
+.order-detail__main_contents__description {
+  font-size: 24px;
+  margin: auto 40px;
+}
+
+.order-detail__shop-name,
+.order-detail__product-name {
+  font-size: 16px;
+  color: #505050;
+  margin-bottom: 2px;
+}
+
+.order-detail__prduct_price {
+  font-size: 14px;
+  color: #505050;
+  margin-bottom: 5px;
+}
+
+.order-detail__attention{
+  font-size: 14px;
+  color: #ff325a;
+}
+
+.order-detail__main_contents__lot {
+  font-size: 16px;
+  display: flex;
+}
+
+.order-detail__lot-edit-btn,
+.order-detail__lot-destory-btn {
+  font-size: 14px;
+  text-decoration: underline;
+  margin: auto 20px;
+}
+
+a:link {
+  color: rgb(154, 47, 47);
+}
+
+.clearfix:after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+
+.order-detail__purchase_contents {
+  width: 330px;
+  height: 100%;
+  min-height: 250px;
+  padding: 19px;
+  margin-left: 100px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #ccc;
+}
+
+.order-detail__purchase_contents__summary {
+  width: 330px;
+  height: 100%;
+  min-height: 210px;
+}
+
+.order-detail__summary td {
+  width: 170px;
+  font-size: 14px;
+  color: #505050;
+  margin-bottom: 5px;
+  line-height: 30px;
+  &.price {
+    text-align: right;
+  }
+  &.price_summary {
+    text-align: right;
+    color: #ff325a;
+  }
+}
+
+hr.summary {
+  width: 330px;
+}
+
+
+.purchase_button {
+  width: 290px;
+  height: 50px;
+  color: #fff;
+  background-color: #505050;
+  margin: 10px 20px 0 20px;
+  &:hover {
+    color: #505050;
+    background-color: #fff;
+  }
+}
+
+
+
