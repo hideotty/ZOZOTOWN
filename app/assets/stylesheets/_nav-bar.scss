@@ -1,0 +1,63 @@
+.nav__bar {
+  background-color: #323232;
+  width: 100vw;
+  min-height: 50px;
+  .login,
+  .new-user,
+  .logout,
+  .product-edit,
+  .user-edit,
+  .user-cart,
+  .user-edit,
+  .shop-edit,
+  .products-edit,
+  .product-show {
+    height: 50px;
+    width: 80px;
+    font-size: 20px;
+    float: right;
+  }
+}
+
+.current_user-id {
+  color:white;
+  padding-left: calc(100vw - 470px);
+  font-size: 15px;
+  line-height: 50px;
+}
+
+.current_shop-name {
+  color:white;
+  padding-left: calc(100vw - 550px);
+  font-size: 15px;
+  line-height: 50px;
+}
+
+.site-title {
+  color: white;
+  font-size: 24px;
+  line-height: 50px;
+  width: 150px;
+  float: left;
+  margin-left: 30px;
+  text-decoration: none;
+  cursor: pointer;
+  cursor: hand;
+}
+
+
+.fa {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  cursor: hand;
+  float: right;
+  margin: 15px 40px 0 0;
+  &:hover {
+    color: #ff325a;
+  }
+  &.fa-sign-in {
+    margin-top: 13px;
+    font-size: 24px;
+  }
+}
