@@ -12,8 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-<<<<<<< Updated upstream
+
+//= require modal-signup_login
 //= require turbolinks
-=======
->>>>>>> Stashed changes
-//= require_tree .
+
