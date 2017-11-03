@@ -1,0 +1,20 @@
+.description__contents__delivery-alert
+  %p
+    この商品は、
+    %strong 最短明日の午前中
+    までに届けるつもりでいます！
+.description__contents__product-name
+  商品名：
+  = @product.name
+.description__contents__product-detail
+  %p 商品説明
+  = @product.body
+  %p 商品No：#{ @product.id}
+  %p カテゴリー：#{ @product.cloth_group } > #{ @product.cloth_category } > #{ @product.cloth_type }
+  %p カラー：#{ @product.color }
+  %p サイズ：#{ @product.size }
+  %p 価格：#{ @product.price }
+.description__contents__parchace-button
+  .tmp-price #{ @product.price }円 税込
+  = form_tag  edit_product_path(current_user), method: "get" do
+    = submit_tag "カートに入れる", class: "add_cart_button"
