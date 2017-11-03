@@ -1,33 +1,46 @@
-.product-detail__contents
-  .product-detail__main_contents
-    .product-detail__contents_image
-      .product-detail__contents_slider
-        %ul#detail-slider
-          %li
-            = image_tag @product.image
-          %li
-            = image_tag @product.image
-          %li
-            = image_tag @product.image
-          %li
-            = image_tag @product.image
-          %li
-            = image_tag @product.image
-        %ul#detail-slider-nav
-          %li
-            = image_tag @product.image
-          %li
-            = image_tag @product.image
-          %li
-            = image_tag @product.image
-          %li
-            = image_tag @product.image
-          %li
-            = image_tag @product.image
-    .product-detail__contents__description
-      .product-detail__contents__item-description
-        = render partial: "product-description"
-.footer
+.product-information__wrapper
+  %h1.shop_name.clearfix #{ @product.shop.name }
+  %h4.product_name.clearfix #{ @product.cloth_group } > #{ @product.cloth_category } > #{ @product.cloth_type } > #{ @product.name }
+  .product_images
+    .main_image
+      = image_tag @main_image.image.url, class: "main_image" if @main_image.image.url.present?
+    .sub-images_contanier
+      .sub_images
+        -if @sub_image.present?
+          - @sub_image.each do |img|
+            = image_tag img.image.url, class: "sub_image" if img.image.url.present?
+        -else
+          = image_tag "no-image.jpg", class: "no_image"
+
+  .product-information
+    .description__product-name
+      商品名：
+      = @product.name
+    .description__product-detail
+      %p 商品No：#{ @product.id }
+      %p カラー：#{ @product.color }
+      %p サイズ：#{ @product.size }
+      %p 価格：¥ #{ @product.price.to_s(:delimited) }
+      %p アイテム説明：
+      .product-comment
+        = @product.body
+
+    .description__product__button
+      .product-price.clearfix #{ @product.price.to_s(:delimited) }円(税込)
+      - if shop_signed_in?
+        .product__edit-button
+          = link_to "商品情報を編集する", edit_product_path(@product), class: "product_edit-button"
+      - elsif user_signed_in?
+        =form_for @product, url: cart_products_path, method: :post do |f|
+          = hidden_field_tag :product_id, @product.id
+          = hidden_field_tag :status, "cart_in"
+          = hidden_field_tag :lot, "1"
+          .product__cart-button
+            = f.submit "カートに入れる", class: "add_cart-button"
+      -else
+        .not_log-in ログイン後に購入いただけます
+
+/ .footer
 
 / #modal-cart-content
 /   %p #{@product.name} をカートに保存しました！

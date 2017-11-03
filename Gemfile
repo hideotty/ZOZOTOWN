@@ -35,6 +35,15 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
  gem 'devise'
+<<<<<<< Updated upstream
+=======
+ gem 'erb2haml'
+ gem 'haml-rails'
+ gem 'config', github: 'railsconfig/config'
+ gem 'pry-rails'
+ gem 'carrierwave'
+ gem 'mini_magick'
+>>>>>>> Stashed changes
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri

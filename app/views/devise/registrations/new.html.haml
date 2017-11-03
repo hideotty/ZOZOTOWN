@@ -1,4 +1,3 @@
-/ =render partial  でnav_barを
 #account-page.account-page
   .account-page-wrapper
     %h2.account-page_title 新規ユーザー登録
@@ -37,21 +36,16 @@
               = f.text_field :postal_code, placeholder: "郵便番号", class: "input_postal_code"
           .input_field_wrapper
             .address_field_label
-              = f.label '住所１'
+              = f.label '住所1'
               %span.strong_label 必須
             .address_field_one
-              = f.text_field :address1, placeholder: "市区町村、番地など", class: "input_address_one"
-          .input_field_wrapper
-            .address_field_label
-              = f.label '住所２'
-            .address_field_two
-              = f.text_field :address2, placeholder: "建物名など（任意）", class: "input_address_two"
+              = f.text_field :address, placeholder: "都道府県", class: "input_address_one"
           .input_field_wrapper
             .phone_field_label
               = f.label '電話番号'
               %span.strong_label 必須
             .phone_field
-              = f.telephone_field :phone, placeholder: "000-0000-0000", class: "input_phone_number"
+              = f.phone_field :phone_number, placeholder: "000-0000-0000", class: "input_phone_number"
           %p password
           %hr
           .input_field_wrapper
