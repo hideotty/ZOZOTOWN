@@ -6,7 +6,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '1d76456f8c2fb8335d60b566860c098bae8915ebc0161b4c533de8efb319d4ef83eb81fe3c63ad034ded6e15928533a31a26a4800a41f3e8353c22d5dabbedc7'
+  config.secret_key = '1d76456f8c2fb8335d60b566860c098bae8915ebc0161b4c533de8efb319d4ef83eb81fe3c63ad034ded6e15928533a31a26a4800a41f3e8353c22d5dabbedc7'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
