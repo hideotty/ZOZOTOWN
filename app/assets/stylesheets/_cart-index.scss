@@ -1,12 +1,13 @@
 .cart_body {
   display: flex;
   flex-direction: row;
-  padding: 40px;
+  padding: 60px 15vw;
 }
 
 .order-detail__contents {
   width: 550px;
   height: calc(100vh-50px);
+  flex-grow: 10;
 }
 
 .order-detail__main_contents-wrapper {
@@ -74,9 +75,6 @@
   font-size: 14px;
   text-decoration: underline;
   margin: auto 20px;
-}
-
-a:link {
   color: rgb(154, 47, 47);
 }
 
@@ -91,8 +89,9 @@ a:link {
   width: 330px;
   height: 100%;
   min-height: 250px;
-  padding: 19px;
+  padding: 30px;
   margin-left: 100px;
+  flex-grow: 1;
   border-style: solid;
   border-width: 1px;
   border-color: #ccc;
@@ -123,13 +122,16 @@ hr.summary {
   width: 330px;
 }
 
+.order-detail__purchase_contents__description {
+}
 
 .purchase_button {
   width: 290px;
   height: 50px;
   color: #fff;
   background-color: #505050;
-  margin: 10px 20px 0 20px;
+  margin: 10px auto;
+  margin-left: 30px;
   &:hover {
     color: #505050;
     background-color: #fff;

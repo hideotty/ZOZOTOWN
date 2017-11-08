@@ -10,10 +10,12 @@ class CartsController < ApplicationController
       @sumprice += @product.price.to_i if @product.present?
       @products << @product
     end
-    if @sumprice > 3999
+    if 0 < @sumprice && @sumprice <= 3999
+      @postage = 399
+    elsif 3999 < @sumprice
       @postage = 0
     else
-      @postage = 399
+      @postage = 0
     end
   end
 end

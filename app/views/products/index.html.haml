@@ -34,7 +34,7 @@
                     = image_tag "#{product.images.main_image[0].image.url}" if product.images.main_image.present?
                     =image_tag "no-image.jpg" if not product.images.main_image.present?
                   %p.contents_price
-                    #{product.price}
+                    ¥ #{product.price.to_s(:delimited)}
 
           .center__contents_campain
             %h5.center__contents_campain-title Recommend Products
@@ -46,7 +46,7 @@
                     = image_tag "#{product.images.main_image[0].image.url}" if product.images.main_image.present?
                     =image_tag "no-image.jpg" if not product.images.main_image.present?
                   %p.contents_price
-                    #{product.price}
+                    ¥ #{product.price.to_s(:delimited)}
               / .center__contents_campain__top-product
               /   = image_tag "image08.jpg"
               / .center__contents_campain__top-product
