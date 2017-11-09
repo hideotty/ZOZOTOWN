@@ -398,7 +398,7 @@ DEPENDENCIES
   config!
   devise
   erb2haml
-  fog (= 1.36.0)
+  fog
   font-awesome-sass
   haml-rails
   jbuilder (~> 2.5)
