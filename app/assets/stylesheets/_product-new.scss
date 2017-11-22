@@ -4,6 +4,10 @@
   margin: 30px auto;
 }
 
+.admin-page__prouct-title{
+  padding-left: 50px;
+}
+
 
 .admin-page__inner--wrapper {
   width: 700px;
@@ -24,7 +28,6 @@
 .admin-page__product-title {
   padding-left: 50px;
 }
-
 .user-search_field,
 .product-select_field {
   width: 300px;
@@ -40,7 +43,6 @@
 }
 
 .product-select_field_wrapper {
-
 }
 
 .new-select-button {
@@ -103,6 +105,17 @@
   height: 50px;
   width: 50px;
 }
+
+.product-subimages{
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+
+
+
+
 
 
 .product-new_field__show-image-button {
@@ -187,6 +200,18 @@ input::-webkit-input-placeholder {
   color: #ddd;
   font-weight: normal;
   font-size: 14px;
+}
+
+button.subimage {
+  width: 50px;
+  height: 50px;
+  margin: 10px 5px;
+  background-image: url('http://livedoor.blogimg.jp/jin115/imgs/9/9/990c597f.png');
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  border: none;
+  outline: none;
 }
 
 // &:after {

@@ -15,4 +15,5 @@
 
 //= require modal-signup_login
 //= require turbolinks
+//= require_tree .
 

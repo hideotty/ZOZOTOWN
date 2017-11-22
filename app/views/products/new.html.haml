@@ -19,6 +19,8 @@
                   = ff.file_field :image, id: "file", style: "display:none", value: ""
                   .product-new_field__show-image-button#js-show-image 商品画像を選択する
                 =ff.hidden_field :status, value: :main_image
+                .product-subimages#js-add-images
+                  %button.subimage#defaultImage{type: 'button'}
             .product-new_field-top__detail
               .product-new_field__name
                 .product-new_field__label

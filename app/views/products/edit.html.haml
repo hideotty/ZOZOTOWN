@@ -18,7 +18,7 @@
               = f.fields_for :images do |ff|
                 = ff.file_field :image, id: "file", style: "display:none", value: "@product.images.main_image.image"
               .product-edit_field__add-image
-                = image_tag "add_image.jpg", class: "add_image_butten"
+                = image_tag "plus.jpg", class: "add_image_butten"
             .product-edit_field-top__detail
               .product-edit_field__name
                 .product-edit_field__label
